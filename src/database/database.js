@@ -1,6 +1,6 @@
 const sequilize = require('sequelize');
 
-const connection = new Sequelize('guiapress', 'root', '', {
+const connection = new sequilize('guiapress', 'root', '', {
     host: 'localhost',
     dialect: 'mysql'
 });
