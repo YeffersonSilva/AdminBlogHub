@@ -3,8 +3,8 @@ const express = require('express');
 const app = express();  // create an express app
 const path = require('path');  
 const connection = require('./database/database'); // import the connection to the database
-
-
+const categoriesController = require('./categories/CategoriesController');
+const articlesController = require('./articles/ArticlesController');
 app.set('view engine', 'ejs');  
 app.set('views', path.join(__dirname, 'views'));
 
@@ -21,6 +21,9 @@ connection.authenticate().then(() => {
     console.error('Unable to connect to the database:', error);
 });
 
+ app.use('/', categoriesController);
+
+app.use('/', articlesController);
 
 app.get('/', (req, res) => {
 res.render("index");
