@@ -16,8 +16,10 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-bodyParser.urlencoded({ extended: false });
+// Configura body-parser para manejar POST requests
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
 
 
 //data base

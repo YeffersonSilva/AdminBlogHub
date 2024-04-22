@@ -1,5 +1,5 @@
-<%- include('../../partials/header.ejs') %> <%-
-include('../../partials/navbar.ejs') %>
+<%- include('../../partials/header.ejs') %>
+ <%-include('../../partials/navbar.ejs') %>
 
 <body>
   <div class="container">
@@ -9,13 +9,12 @@ include('../../partials/navbar.ejs') %>
         <h2>Cadastro de categoria</h2>
       </div>
       <div class="card-body">
-        <form method="post" action="/categoria/save">
+        <form method="POST" action="/categories/save">
           <input
             class="form-control"
-            action="text"
-            name="tittle"
-            placeholder="defina o titulo da categoria"
-          /><br />
+            type="text"
+            name="title"
+            placeholder="defina o titulo da categoria"/>
 
           <button class="btn btn-success">Cadastrar</button>
         </form>

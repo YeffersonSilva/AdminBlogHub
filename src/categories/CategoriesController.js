@@ -9,15 +9,21 @@ router.get('/admin/categories/new', (req, res) => {
 })
 
 
-router.post('/categoria/save', (req, res) => {
+router.post('/categories/save', (req, res) => {
     var title = req.body.title;
+    console.log("Received title:", title); // Verifica si el título se recibe correctamente
+
     if(title != undefined){
         Category.create({
             title: title,
             slug: slugify(title)
         }).then(() => {
             res.redirect('/');
-        })
+        }).catch(err => {
+            console.error("Error al crear la categoría:", err);
+            res.status(500).send("Error interno del servidor");
+        });
+        
     } else {
         res.redirect('/admin/categories/new');
     }
