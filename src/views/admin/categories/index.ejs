@@ -25,7 +25,7 @@
           <td> 
             <a href="/admin/categories/edit/<%= category.id %>" class="btn btn-warning">Editar</a>
 
-           <form method="post" action="/categories/delete" style="display:inline;" onsubmit="confirm" >
+           <form method="post" action="/categories/delete" style="display:inline;" onsubmit="confirmacio(event)" >
            <input type="hidden" name="id" value="<%= category.id %>" >
            <button class="btn btn-danger">Excluir </button>
         </form>
