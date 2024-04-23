@@ -24,8 +24,8 @@
             <td><%= category.slug %></td>
           <td> 
             <a href="/admin/categories/edit/<%= category.id %>" class="btn btn-warning">Editar</a>
-            
-           <form method="post" action="/categories/delete" style="display:inline;" >
+
+           <form method="post" action="/categories/delete" style="display:inline;" onsubmit="confirm" >
            <input type="hidden" name="id" value="<%= category.id %>" >
            <button class="btn btn-danger">Excluir </button>
         </form>
@@ -36,3 +36,15 @@
   </table>
 </div>
 <%- include('../../partials/footer.ejs') %>
+
+<script>
+    const deleteButtons = document.querySelectorAll('form');
+    deleteButtons.forEach(button => {
+        button.addEventListener('submit', (event) => {
+        const confirmation = confirm('Deseja realmente excluir?');
+        if (!confirmation) {
+            event.preventDefault();
+        }
+        });
+    });
+</script>
