@@ -55,4 +55,21 @@ router.post("/categories/delete", (req, res) => {
     }
 })
 
+router.post("/categories/update", (req, res) => {
+    const id = req.body.id;
+    const title = req.body.title;
+    if (id != undefined) {
+        Category.update({ title: title, slug: slugify(title) }, {
+            where: {
+                id: id
+            }
+        }).then(() => {
+            res.redirect('/admin/categories');
+        })
+    } else {
+        res.redirect('/admin/categories');
+        res.status(500).send("Error interno del servidor");
+    }
+})
+        
 module.exports = router;
