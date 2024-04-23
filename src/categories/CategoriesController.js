@@ -46,10 +46,10 @@ router.post("/categories/delete", (req, res) => {
         Category.destroy({
             where: {
                 id: id
-            }.then(() => {
+            } }).then(() => {
                 res.redirect('/admin/categories');
             })
-        })
+       
     } else {
         res.redirect('/admin/categories');
     }
