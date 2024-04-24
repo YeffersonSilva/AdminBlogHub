@@ -30,6 +30,8 @@ router.post('/categories/save', (req, res) => {
 })
 
 
+
+
 router.get("/admin/categories", (req, res) => {
     
     Category.findAll().then(categories => {
@@ -55,21 +57,21 @@ router.post("/categories/delete", (req, res) => {
     }
 })
 
-router.post("/categories/update", (req, res) => {
-    const id = req.body.id;
-    const title = req.body.title;
-    if (id != undefined) {
-        Category.update({ title: title, slug: slugify(title) }, {
-            where: {
-                id: id
-            }
-        }).then(() => {
-            res.redirect('/admin/categories');
-        })
-    } else {
+
+router.get("/admin/categories/edit/:id", (req, res) => {
+    const id = req.params.id;
+    if (isNaN(id)) {
         res.redirect('/admin/categories');
-        res.status(500).send("Error interno del servidor");
     }
-})
-        
+
+    Category.findByPk(id).then(category => {
+        if (category != undefined) {
+            res.render('admin/categories/edit', {category: category});
+        } else {
+            res.redirect('/admin/categories');
+        }
+    }).catch(err => {
+        res.redirect('/admin/categories');
+    });
+})  
 module.exports = router;
