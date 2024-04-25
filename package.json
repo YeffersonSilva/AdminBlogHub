@@ -1,21 +1,25 @@
 {
-  "name": "adminbloghub",
+  "name": "guiapress",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.20.2",
-    "ejs": "^3.1.10",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "ejs": "^2.7.4",
     "express": "^4.19.2",
-    "mysql2": "^3.9.6",
-    "nodemon": "^3.1.0",
-    "sequelize": "^6.37.3",
+    "express-session": "^1.17.0",
+    "moment": "^2.24.0",
+    "moment-timezone": "^0.5.27",
+    "mysql2": "^1.7.0",
+    "nodemon": "^2.0.1",
+    "sequelize": "^5.22.5",
     "slugify": "^1.6.6"
   }
 }

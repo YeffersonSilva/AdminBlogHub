@@ -18,7 +18,7 @@ router.post('/categories/save', (req, res) => {
             title: title,
             slug: slugify(title)
         }).then(() => {
-            res.redirect('/');
+            res.redirect('/admin/categories');
         }).catch(err => {
             console.error("Error al crear la categoría:", err);
             res.status(500).send("Error interno del servidor");
