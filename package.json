@@ -5,21 +5,21 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
+    "start": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "ejs": "^2.7.4",
+    "ejs": "3.1.10",
     "express": "^4.19.2",
     "express-session": "^1.17.0",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.27",
     "mysql2": "^1.7.0",
     "nodemon": "^2.0.1",
-    "sequelize": "^5.22.5",
+    "sequelize": "6.37.3",
     "slugify": "^1.6.6"
   }
 }
