@@ -8,9 +8,17 @@ AdminBlogHub is a centralized blog management tool designed to streamline the pr
 - **User-Friendly Interface**: A clean and easy-to-use interface that simplifies blog management.
 
 ## Technologies Used
-- Node.js
-- Express
-- Ejs
+
+This project is built using a variety of technologies to ensure efficiency, scalability, and ease of development. Here's a breakdown of the main technologies involved:
+
+- **Node.js**
+- **Express**
+- **EJS**
+- **Docker**
+- **Docker Compose**
+- **Bootstrap**
+
+These tools combine to create a robust environment for developing, testing, and deploying web applications efficiently.
 
 ## Installation
 To start using AdminBlogHub, follow these steps:
