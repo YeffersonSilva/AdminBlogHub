@@ -113,6 +113,16 @@ router.get("/articles/page/:num",(req, res) => {
         var result = {
             page: parseInt(page),
             next: next,
-            
+            articles : articles
+        }
+
+        Category.findAll().then(categories => {
+            res.render("admin/articles/page",{result: result, categories: categories})
+        });
+    })
+
+
+});
+
 
 module.exports = router;
